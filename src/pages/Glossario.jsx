@@ -117,7 +117,7 @@ export default function Glossario() {
           </div>
         ))}
 
-        {/* Footer note */}
+        {/* Footer note 
         {letrasOrdenadas.length > 0 && !busca && (
           <div className="mt-8 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 text-center">
             <p className="text-xs text-zinc-400 dark:text-zinc-600">
@@ -125,7 +125,7 @@ export default function Glossario() {
               sistema Hepburn de romanização.
             </p>
           </div>
-        )}
+        )}*/}
       </div>
     </div>
   );
