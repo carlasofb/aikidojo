@@ -5,6 +5,7 @@ import { useTheme } from "../components/ThemeContext";
 import {
   Sun,
   Moon,
+  Sparkles,
   BookOpen,
   Brain,
   BookMarked,
@@ -45,6 +46,16 @@ export default function Home() {
       accent: "from-teal-500 to-emerald-600",
       bg: "bg-teal-50 dark:bg-teal-950/40",
       border: "border-teal-100 dark:border-teal-900/50",
+    },
+    {
+      to: "/beta",
+      icon: Sparkles,
+      label: "BETA",
+      desc: "Notícias, progresso e eventos do clube",
+      count: "Novo",
+      accent: "from-emerald-500 to-lime-600",
+      bg: "bg-emerald-50 dark:bg-emerald-950/40",
+      border: "border-emerald-100 dark:border-emerald-900/50",
     },
   ];
 

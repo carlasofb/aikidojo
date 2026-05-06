@@ -15,6 +15,10 @@ import Conceitos from "./pages/Conceitos";
 import ConceitoDetalhe from "./pages/ConceitoDetalhe";
 import Glossario from "./pages/Glossario";
 import Fundador from "./pages/Fundador";
+import Beta from "./pages/Beta";
+import Noticias from "./pages/Noticias";
+import Progresso from "./pages/Progresso";
+import Eventos from "./pages/Eventos";
 
 const AuthenticatedApp = () => {
   /*   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } =
@@ -47,6 +51,10 @@ const AuthenticatedApp = () => {
       <Route path="/conceitos/:id" element={<ConceitoDetalhe />} />
       <Route path="/glossario" element={<Glossario />} />
       <Route path="/fundador" element={<Fundador />} />
+      <Route path="/beta" element={<Beta />} />
+      <Route path="/noticias" element={<Noticias />} />
+      <Route path="/progresso" element={<Progresso />} />
+      <Route path="/eventos" element={<Eventos />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
