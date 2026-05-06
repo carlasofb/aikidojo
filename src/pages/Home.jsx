@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import { useTheme } from "../components/ThemeContext";
 import {
   Sun,
@@ -164,7 +165,13 @@ export default function Home() {
             <p className="text-zinc-500 dark:text-zinc-500 text-xs mt-1 leading-relaxed">
               Mestre de artes marciais japonês que sintetizou décadas de treino
               em Jujutsu, Kenjutsu e Spear fighting para criar o Aikido — uma
-              arte que enfatiza harmonia, ética e paz.
+              arte que enfatiza harmonia, ética e paz.{" "}
+              <Link
+                to="/fundador"
+                className="font-semibold text-zinc-900 dark:text-zinc-100 underline underline-offset-2 hover:opacity-70 transition-opacity"
+              >
+                Ler mais →
+              </Link>
             </p>
           </div>
         </div>
