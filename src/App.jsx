@@ -15,10 +15,16 @@ import Conceitos from "./pages/Conceitos";
 import ConceitoDetalhe from "./pages/ConceitoDetalhe";
 import Glossario from "./pages/Glossario";
 import Fundador from "./pages/Fundador";
-import Beta from "./pages/Beta";
-import Noticias from "./pages/Noticias";
-import Progresso from "./pages/Progresso";
-import Eventos from "./pages/Eventos";
+import Beta from "./pages/beta/Beta";
+import Noticias from "./pages/beta/Noticias";
+import Progresso from "./pages/beta/Progresso";
+import Eventos from "./pages/beta/Eventos";
+import Treino from "./pages/beta/Treino";
+import Desafios from "./pages/beta/Desafios";
+import Recursos from "./pages/beta/Recursos";
+import Perfil from "./pages/beta/Perfil";
+import Feedback from "./pages/beta/Feedback";
+import Quiz from "./pages/beta/Quiz";
 
 const AuthenticatedApp = () => {
   /*   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } =
@@ -52,8 +58,14 @@ const AuthenticatedApp = () => {
       <Route path="/glossario" element={<Glossario />} />
       <Route path="/fundador" element={<Fundador />} />
       <Route path="/beta" element={<Beta />} />
-      <Route path="/noticias" element={<Noticias />} />
+      <Route path="/treino" element={<Treino />} />
+      <Route path="/desafios" element={<Desafios />} />
+      <Route path="/recursos" element={<Recursos />} />
+      <Route path="/perfil" element={<Perfil />} />
+      <Route path="/feedback" element={<Feedback />} />
+      <Route path="/quiz" element={<Quiz />} />
       <Route path="/progresso" element={<Progresso />} />
+      <Route path="/exames" element={<Noticias />} />
       <Route path="/eventos" element={<Eventos />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>

@@ -5,11 +5,11 @@ import { useTheme } from "../components/ThemeContext";
 import {
   Sun,
   Moon,
-  Sparkles,
   BookOpen,
   Brain,
   BookMarked,
   ChevronRight,
+  TestTube,
 } from "lucide-react";
 import { tecnicas, conceitos } from "../components/aikidoData";
 
@@ -49,7 +49,7 @@ export default function Home() {
     },
     {
       to: "/beta",
-      icon: Sparkles,
+      icon: TestTube,
       label: "BETA",
       desc: "Notícias, progresso e eventos do clube",
       count: "Novo",

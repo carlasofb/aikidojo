@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CalendarDays, MapPin, Clock3 } from "lucide-react";
-import { useTheme } from "../components/ThemeContext";
-import { eventos } from "../components/betaData";
+import { useTheme } from "../../components/ThemeContext";
+import { eventos } from "../../components/betaData";
 
 export default function Eventos() {
   const { dark, toggle } = useTheme();

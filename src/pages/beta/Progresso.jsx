@@ -1,14 +1,22 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Sparkles, CheckCircle2, Circle } from "lucide-react";
-import { useTheme } from "../components/ThemeContext";
-import { initialStudyProgress } from "../components/betaData";
+import {
+  ArrowLeft,
+  Sparkles,
+  CheckCircle2,
+  Circle,
+  TrendingUp,
+  Award,
+} from "lucide-react";
+import { useTheme } from "../../components/ThemeContext";
+import { initialStudyProgress } from "../../components/betaData";
 
 const STORAGE_KEY = "aikido-study-progress";
 
 export default function Progresso() {
   const { dark, toggle } = useTheme();
   const [progress, setProgress] = useState([]);
+  const [streakDays, setStreakDays] = useState(4);
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -36,9 +44,23 @@ export default function Progresso() {
     () => progress.filter((item) => item.completed).length,
     [progress],
   );
+
   const percent = progress.length
     ? Math.round((completedCount / progress.length) * 100)
     : 0;
+
+  const categories = useMemo(() => {
+    const map = {};
+    progress.forEach((item) => {
+      map[item.category] = map[item.category] || { total: 0, completed: 0 };
+      map[item.category].total += 1;
+      if (item.completed) map[item.category].completed += 1;
+    });
+    return Object.entries(map).map(([category, stats]) => ({
+      category,
+      ...stats,
+    }));
+  }, [progress]);
 
   const toggleItem = (id) => {
     setProgress((current) =>
@@ -85,21 +107,22 @@ export default function Progresso() {
 
       <div className="px-5 py-6 max-w-3xl mx-auto space-y-5">
         <div className="rounded-3xl border border-zinc-100 dark:border-zinc-800/60 bg-zinc-50 dark:bg-zinc-900 p-5">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                 Progresso de estudo
               </p>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                Guarda o teu progresso localmente e marca os tópicos já vistos.
+                Guarda o teu progresso localmente e acompanha as áreas já
+                trabalhadas.
               </p>
             </div>
-            <div className="text-right">
+            <div className="grid gap-2 text-right">
               <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                {percent}%
+                {percent}% completado
               </p>
               <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                {completedCount} de {progress.length}
+                Streak de {streakDays} dias
               </p>
             </div>
           </div>
@@ -109,6 +132,25 @@ export default function Progresso() {
               style={{ width: `${percent}%` }}
             />
           </div>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-3">
+          {categories.map((item) => (
+            <div
+              key={item.category}
+              className="rounded-3xl border border-zinc-100 dark:border-zinc-800/60 bg-white dark:bg-zinc-950 p-4"
+            >
+              <p className="text-xs uppercase tracking-[0.35em] text-zinc-400 dark:text-zinc-500 font-semibold">
+                {item.category}
+              </p>
+              <p className="mt-3 text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+                {Math.round((item.completed / item.total) * 100)}%
+              </p>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                {item.completed}/{item.total} concluídos
+              </p>
+            </div>
+          ))}
         </div>
 
         <div className="space-y-4">
