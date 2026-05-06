@@ -233,6 +233,7 @@ export const tecnicas = [
     subtitulo: "Primeira Técnica",
     categoria: "Controle",
     dificuldade: "Iniciante",
+    kyu: ["5º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu"],
     descricao:
       "Ikkyo é a primeira e mais fundamental das técnicas de controle do Aikido. Utiliza a força do corpo inteiro para controlar o braço e o cotovelo do uke, levando-o ao chão de forma harmoniosa.",
     pontosClave: [
@@ -252,6 +253,7 @@ export const tecnicas = [
     subtitulo: "Segunda Técnica",
     categoria: "Controle",
     dificuldade: "Iniciante",
+    kyu: ["4º Kyu"],
     descricao:
       "Nikyo aplica uma torção específica no punho que cria uma pressão intensa no pulso e no antebraço. É uma técnica de controle eficaz que pode ser aplicada a partir de vários ataques.",
     pontosClave: [
@@ -271,6 +273,7 @@ export const tecnicas = [
     subtitulo: "Terceira Técnica",
     categoria: "Controle",
     dificuldade: "Intermediário",
+    kyu: ["3º Kyu", "2º Kyu"],
     descricao:
       "Sankyo cria uma torção espiral no punho e no antebraço que projeta o uke para cima e o desestabiliza. A espiral é a essência desta técnica — o movimento segue a estrutura natural do braço.",
     pontosClave: [
@@ -290,6 +293,7 @@ export const tecnicas = [
     subtitulo: "Quarta Técnica",
     categoria: "Controle",
     dificuldade: "Intermediário",
+    kyu: ["3º Kyu", "2º Kyu", "1º Kyu"],
     descricao:
       "Yonkyo aplica pressão sobre o nervo radial no antebraço do uke. Parece simples mas exige precisão milimétrica no ponto de pressão. Quando aplicado corretamente, é extremamente eficaz.",
     pontosClave: [
@@ -309,6 +313,7 @@ export const tecnicas = [
     subtitulo: "Quinta Técnica",
     categoria: "Controle",
     dificuldade: "Intermediário",
+    kyu: ["2º Kyu", "1º Kyu"],
     descricao:
       "Gokyo é similar ao Ikkyo mas com uma apreensão diferente que permite neutralizar ataques com armas. O controle do pulso é invertido em relação ao Ikkyo, especialmente eficaz contra faca.",
     pontosClave: [
@@ -328,6 +333,7 @@ export const tecnicas = [
     subtitulo: "Projeção de Entrada",
     categoria: "Projeção",
     dificuldade: "Intermediário",
+    kyu: ["5º Kyu", "4º Kyu", "2º Kyu", "1º Kyu"],
     descricao:
       "Irimi Nage é conhecida como 'a técnica de 20 anos'. Usa uma entrada direta e profunda para desestabilizar o uke e projetá-lo com o braço no pescoço ou peito.",
     pontosClave: [
@@ -347,6 +353,7 @@ export const tecnicas = [
     subtitulo: "Projeção em Quatro Direções",
     categoria: "Projeção",
     dificuldade: "Iniciante",
+    kyu: ["5º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu"],
     descricao:
       "Shihonage significa 'projeção em quatro direções'. É uma das técnicas mais conhecidas do Aikido, onde o braço do uke é girado acima da cabeça e projetado para baixo.",
     pontosClave: [
@@ -366,6 +373,7 @@ export const tecnicas = [
     subtitulo: "Projeção Rotatória",
     categoria: "Projeção",
     dificuldade: "Intermediário",
+    kyu: ["2º Kyu"],
     descricao:
       "Kaiten Nage usa uma rotação do braço do uke para criar uma projeção dinâmica. O braço é levado em círculo — para baixo e para fora — criando um movimento irresistível.",
     pontosClave: [
@@ -385,6 +393,7 @@ export const tecnicas = [
     subtitulo: "Torção Reversa do Punho",
     categoria: "Projeção",
     dificuldade: "Iniciante",
+    kyu: ["1º Kyu"],
     descricao:
       "Kote Gaeshi aplica uma torção para fora no punho do uke, quebrando sua estrutura e projetando-o. É uma das técnicas mais universais do Aikido.",
     pontosClave: [
@@ -404,6 +413,7 @@ export const tecnicas = [
     subtitulo: "Projeção Céu e Terra",
     categoria: "Projeção",
     dificuldade: "Intermediário",
+    kyu: ["3º Kyu", "1º Kyu"],
     descricao:
       "Tenchi Nage significa 'projeção céu e terra'. Um braço vai para cima (céu) e o outro para baixo (terra), desequilibrando o uke em dois planos simultaneamente.",
     pontosClave: [
@@ -416,23 +426,25 @@ export const tecnicas = [
     ataques: ["Ryote dori", "Morote dori"],
     variantes: ["Omote", "Ura"],
   },
-  /*   {
+  {
     id: "koshinage",
     nome: "Koshi Nage",
     japones: "腰投げ",
     subtitulo: "Projeção de Quadril",
     categoria: "Projeção",
     dificuldade: "Avançado",
-    descricao: "Koshi Nage é uma projeção que usa o quadril como ponto de apoio. O uke é levantado e projetado sobre o quadril do nage. Exige ukemi avançado.",
+    kyu: ["Dan"],
+    descricao:
+      "Koshi Nage é uma projeção que usa o quadril como ponto de apoio. O uke é levantado e projetado sobre o quadril do nage. Exige ukemi avançado.",
     pontosClave: [
       "Entrar profundamente e girar o quadril sob o centro do uke",
       "Dobrar os joelhos para ficar abaixo do centro do uke",
       "Puxar o uke sobre o quadril com força coordenada",
       "O uke deve fazer um ukemi de alta queda",
-      "Exige muito treino para ser praticado com segurança"
+      "Exige muito treino para ser praticado com segurança",
     ],
     ataques: ["Shomen uchi", "Katate dori", "Yokomen uchi"],
-    variantes: ["Múltiplas entradas possíveis"]
+    variantes: ["Múltiplas entradas possíveis"],
   },
   {
     id: "kokyunage",
@@ -441,17 +453,29 @@ export const tecnicas = [
     subtitulo: "Projeção pela Respiração",
     categoria: "Projeção",
     dificuldade: "Intermediário",
-    descricao: "Kokyu Nage é um grupo de projeções que utilizam a extensão do kokyu (poder da respiração) para desequilibrar e projectar o uke sem necessidade de agarrar ou torcer articulações. É a expressão mais fluida do aiki.",
+    kyu: ["Dan"],
+    descricao:
+      "Kokyu Nage é um grupo de projeções que utilizam a extensão do kokyu (poder da respiração) para desequilibrar e projectar o uke sem necessidade de agarrar ou torcer articulações. É a expressão mais fluida do aiki.",
     pontosClave: [
       "Não agarrar — usar extensão de kokyu para conectar",
       "Fundir-se com o movimento do uke antes de redirecionar",
       "Usar o centro (hara) como fonte de poder, não os braços",
       "Timing preciso — a projecção surge no momento certo",
-      "Existem dezenas de variantes — princípio, não forma fixa"
+      "Existem dezenas de variantes — princípio, não forma fixa",
     ],
-    ataques: ["Katate dori", "Ryote dori", "Shomen uchi", "Yokomen uchi", "Tsuki"],
-    variantes: ["Inúmeras variantes de acordo com o ataque", "Omote e ura", "Com ou sem contato prolongado"]
-  }, */
+    ataques: [
+      "Katate dori",
+      "Ryote dori",
+      "Shomen uchi",
+      "Yokomen uchi",
+      "Tsuki",
+    ],
+    variantes: [
+      "Inúmeras variantes de acordo com o ataque",
+      "Omote e ura",
+      "Com ou sem contato prolongado",
+    ],
+  },
   {
     id: "kokyuho",
     nome: "Kokyu Ho",
@@ -459,6 +483,7 @@ export const tecnicas = [
     subtitulo: "Método da Respiração",
     categoria: "Técnica Base",
     dificuldade: "Iniciante",
+    kyu: ["5º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu"],
     descricao:
       "Kokyu Ho é o exercício fundamental do Aikido praticado no final de cada treino. Sentados em seiza, nage e uke exploram a extensão do kokyu enquanto uke agarra ambos os pulsos de nage.",
     pontosClave: [
@@ -475,23 +500,29 @@ export const tecnicas = [
       "Em pé (tachi kokyu ho)",
     ],
   },
-  /*   {
+  {
     id: "udekimenage",
     nome: "Ude Kime Nage",
     japones: "腕極投げ",
     subtitulo: "Projeção com Bloqueio de Braço",
     categoria: "Projeção",
     dificuldade: "Intermediário",
-    descricao: "Ude Kime Nage usa o próprio braço de nage como fulcro para criar uma hiper-extensão do cotovelo do uke, forçando-o a projetar-se para a frente. É uma técnica de controle articular convertida em projeção.",
+    kyu: ["Dan"],
+    descricao:
+      "Ude Kime Nage usa o próprio braço de nage como fulcro para criar uma hiper-extensão do cotovelo do uke, forçando-o a projetar-se para a frente. É uma técnica de controle articular convertida em projeção.",
     pontosClave: [
       "Sair da linha do ataque (tsuki ou shomen) e capturar o braço",
       "Usar o próprio antebraço ou ombro como alavanca",
       "Estender o braço do uke para além do ponto natural",
       "A pressão no cotovelo força uke a cair para a frente",
-      "Manter o eixo central — não usar força bruta"
+      "Manter o eixo central — não usar força bruta",
     ],
     ataques: ["Tsuki", "Shomen uchi", "Katate dori"],
-    variantes: ["Com fulcro no ombro", "Com fulcro no antebraço", "Com entrada irimi ou tenkan"]
+    variantes: [
+      "Com fulcro no ombro",
+      "Com fulcro no antebraço",
+      "Com entrada irimi ou tenkan",
+    ],
   },
   {
     id: "hijikimenage",
@@ -500,16 +531,22 @@ export const tecnicas = [
     subtitulo: "Projeção com Bloqueio de Cotovelo",
     categoria: "Projeção",
     dificuldade: "Intermediário",
-    descricao: "Hiji Kime Nage aplica pressão directa e ascendente sob a articulação do cotovelo do uke, levando-o à ponta dos pés e forçando uma projecção para a frente. Similar ao Ude Kime mas com ponto de pressão no cotovelo.",
+    kyu: ["Dan"],
+    descricao:
+      "Hiji Kime Nage aplica pressão directa e ascendente sob a articulação do cotovelo do uke, levando-o à ponta dos pés e forçando uma projecção para a frente. Similar ao Ude Kime mas com ponto de pressão no cotovelo.",
     pontosClave: [
       "Capturar o pulso do uke com uma mão",
       "Pressionar com a outra mão de baixo para cima sob o cotovelo",
       "Uke é elevado — perde o equilíbrio para a frente",
       "Projecção é feita prolongando e descendo o cotovelo",
-      "Não forçar — usar o peso do corpo e timing correcto"
+      "Não forçar — usar o peso do corpo e timing correcto",
     ],
     ataques: ["Katate dori", "Tsuki", "Shomen uchi"],
-    variantes: ["Com entrada directa", "Com tenkan", "Finalização em osae ou projecção"]
+    variantes: [
+      "Com entrada directa",
+      "Com tenkan",
+      "Finalização em osae ou projecção",
+    ],
   },
   {
     id: "sumiotoshi",
@@ -518,17 +555,19 @@ export const tecnicas = [
     subtitulo: "Queda no Canto",
     categoria: "Projeção",
     dificuldade: "Intermediário",
-    descricao: "Sumi Otoshi significa 'queda no canto'. Nage entra profundamente por trás do uke e deixa cair o próprio peso para o canto traseiro, arrastando uke consigo num colapso diagonal irresistível.",
+    kyu: ["Dan"],
+    descricao:
+      "Sumi Otoshi significa 'queda no canto'. Nage entra profundamente por trás do uke e deixa cair o próprio peso para o canto traseiro, arrastando uke consigo num colapso diagonal irresistível.",
     pontosClave: [
       "Entrar (irimi) profundamente para o lado e trás do uke",
       "Um braço controla o ombro, o outro guia pelo peito",
       "Deixar cair o próprio peso para o canto inferior",
       "Uke não pode resistir — a estrutura colapsa diagonalmente",
-      "O poder vem do peso do corpo, não dos braços"
+      "O poder vem do peso do corpo, não dos braços",
     ],
     ataques: ["Katate dori", "Morote dori", "Shomen uchi", "Yokomen uchi"],
-    variantes: ["Omote", "Com ou sem tenkan inicial"]
-  } */
+    variantes: ["Omote", "Com ou sem tenkan inicial"],
+  },
 ];
 
 export const conceitos = [

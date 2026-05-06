@@ -1,33 +1,66 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Search, X } from "lucide-react";
+import { ArrowLeft, Search, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "../components/ThemeContext";
-import { Sun, Moon } from "lucide-react";
-import {
-  tecnicas,
-  categoriasCores,
-  dificuldadeCores,
-} from "../components/aikidoData";
+import { tecnicas, categoriasCores } from "../components/aikidoData";
+
+const kyuList = [
+  {
+    label: "Todas",
+    active: "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900",
+    inactive: "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400",
+  },
+  {
+    label: "5º Kyu",
+    active: "bg-yellow-400 text-white",
+    inactive:
+      "bg-yellow-50 dark:bg-yellow-950/40 text-yellow-600 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800/50",
+  },
+  {
+    label: "4º Kyu",
+    active: "bg-orange-500 text-white",
+    inactive:
+      "bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 border border-orange-200 dark:border-orange-800/50",
+  },
+  {
+    label: "3º Kyu",
+    active: "bg-green-600 text-white",
+    inactive:
+      "bg-green-50 dark:bg-green-950/40 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800/50",
+  },
+  {
+    label: "2º Kyu",
+    active: "bg-blue-600 text-white",
+    inactive:
+      "bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50",
+  },
+  {
+    label: "1º Kyu",
+    active: "bg-amber-800 text-white",
+    inactive:
+      "bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-400 border border-amber-200 dark:border-amber-800/50",
+  },
+  {
+    label: "Dan",
+    active: "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900",
+    inactive:
+      "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300 dark:border-zinc-600",
+  },
+];
 
 export default function Tecnicas() {
   const { dark, toggle } = useTheme();
   const [busca, setBusca] = useState("");
-  const [filtroCategoria, setFiltroCategoria] = useState("Todas");
-  const [filtroDificuldade, setFiltroDificuldade] = useState("Todas");
-
-  const categorias = ["Todas", "Controle", "Projeção"];
-  const dificuldades = ["Todas", "Iniciante", "Intermediário", "Avançado"];
+  const [filtroKyu, setFiltroKyu] = useState("Todas");
 
   const filtradas = tecnicas.filter((t) => {
     const matchBusca =
       t.nome.toLowerCase().includes(busca.toLowerCase()) ||
       t.subtitulo.toLowerCase().includes(busca.toLowerCase()) ||
       t.japones.includes(busca);
-    const matchCat =
-      filtroCategoria === "Todas" || t.categoria === filtroCategoria;
-    const matchDif =
-      filtroDificuldade === "Todas" || t.dificuldade === filtroDificuldade;
-    return matchBusca && matchCat && matchDif;
+    const matchKyu =
+      filtroKyu === "Todas" || (t.kyu && t.kyu.includes(filtroKyu));
+    return matchBusca && matchKyu;
   });
 
   return (
@@ -90,33 +123,15 @@ export default function Tecnicas() {
 
         {/* Filters */}
         <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-          {categorias.map((c) => (
+          {kyuList.map(({ label, active, inactive }) => (
             <button
-              key={c}
-              onClick={() => setFiltroCategoria(c)}
+              key={label}
+              onClick={() => setFiltroKyu(label)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-                filtroCategoria === c
-                  ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900"
-                  : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400"
+                filtroKyu === label ? active : inactive
               }`}
             >
-              {c}
-            </button>
-          ))}
-          <div className="w-px bg-zinc-200 dark:bg-zinc-700 mx-1" />
-          {dificuldades.slice(1).map((d) => (
-            <button
-              key={d}
-              onClick={() =>
-                setFiltroDificuldade(filtroDificuldade === d ? "Todas" : d)
-              }
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-                filtroDificuldade === d
-                  ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900"
-                  : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400"
-              }`}
-            >
-              {d}
+              {label}
             </button>
           ))}
         </div>
@@ -132,7 +147,6 @@ export default function Tecnicas() {
         )}
         {filtradas.map((tecnica) => {
           const cat = categoriasCores[tecnica.categoria] || {};
-          const dif = dificuldadeCores[tecnica.dificuldade] || {};
           return (
             <Link
               key={tecnica.id}
@@ -166,11 +180,15 @@ export default function Tecnicas() {
                 >
                   {tecnica.categoria}
                 </span>
-                <span
-                  className={`px-2 py-0.5 rounded-md text-xs font-medium ${dif.bg} ${dif.text}`}
-                >
-                  {tecnica.dificuldade}
-                </span>
+                {tecnica.kyu &&
+                  tecnica.kyu.map((k) => (
+                    <span
+                      key={k}
+                      className="px-2 py-0.5 rounded-md text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400"
+                    >
+                      {k}
+                    </span>
+                  ))}
               </div>
             </Link>
           );
