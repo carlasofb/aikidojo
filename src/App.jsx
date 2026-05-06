@@ -27,6 +27,7 @@ import Recursos from "./pages/beta/Recursos";
 import Perfil from "./pages/beta/Perfil";
 import Feedback from "./pages/beta/Feedback";
 import Quiz from "./pages/beta/Quiz";
+import VidaDiaria from "./pages/beta/VidaDiaria";
 
 const ScrollToTop = () => {
   const { pathname, search, hash } = useLocation();
@@ -76,6 +77,7 @@ const AuthenticatedApp = () => {
       <Route path="/perfil" element={<Perfil />} />
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/quiz" element={<Quiz />} />
+      <Route path="/vida-diaria" element={<VidaDiaria />} />
       <Route path="/progresso" element={<Progresso />} />
       <Route path="/exames" element={<Noticias />} />
       <Route path="/eventos" element={<Eventos />} />

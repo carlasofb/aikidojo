@@ -15,6 +15,7 @@ import {
   Youtube,
   Mail,
   Dumbbell,
+  Heart,
 } from "lucide-react";
 import { useTheme } from "../../components/ThemeContext";
 
@@ -46,6 +47,13 @@ const betaCards = [
     title: "Recursos",
     description: "Dicas, vídeos e material para praticar fora do dojo.",
     accent: "from-cyan-500 to-sky-600",
+  },
+  {
+    to: "/vida-diaria",
+    icon: Heart,
+    title: "Vida diária",
+    description: "Como aplicar o Aikido na rotina e em situações reais.",
+    accent: "from-pink-500 to-rose-600",
   },
   {
     to: "/perfil",
