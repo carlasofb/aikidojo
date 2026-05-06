@@ -1,9 +1,11 @@
+import React from "react";
 import { Toaster } from "./components/ui/toaster";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
+  useLocation,
 } from "react-router-dom";
 import PageNotFound from "./lib/PageNotFound";
 import { ThemeProvider } from "./components/ThemeContext";
@@ -25,6 +27,16 @@ import Recursos from "./pages/beta/Recursos";
 import Perfil from "./pages/beta/Perfil";
 import Feedback from "./pages/beta/Feedback";
 import Quiz from "./pages/beta/Quiz";
+
+const ScrollToTop = () => {
+  const { pathname, search, hash } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname, search, hash]);
+
+  return null;
+};
 
 const AuthenticatedApp = () => {
   /*   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } =
@@ -78,6 +90,7 @@ function App() {
     //   <QueryClientProvider client={queryClientInstance}>
     <>
       <Router>
+        <ScrollToTop />
         <ThemeProvider>
           <AuthenticatedApp />
         </ThemeProvider>
