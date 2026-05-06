@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Search, X, Sun, Moon } from "lucide-react";
-import { useTheme } from "../components/ThemeContext";
+import { ArrowLeft, Search, X } from "lucide-react";
 import { tecnicas, categoriasCores } from "../components/aikidoData";
 
 const kyuList = [
@@ -49,9 +48,37 @@ const kyuList = [
 ];
 
 export default function Tecnicas() {
-  const { dark } = useTheme();
   const [busca, setBusca] = useState("");
   const [filtroKyu, setFiltroKyu] = useState("Todas");
+
+  const katasArmasDan = [
+    {
+      id: "jo-dan",
+      title: "Kata de Jo para Dan",
+      description:
+        "Exemplo de kata com jo pensado para praticantes de nível Dan, com foco em distância e defesa ativa.",
+      steps: [
+        "1. Inicie com guarda alta e o jo à frente do corpo.",
+        "2. Desvie o ataque do uke com um bloqueio diagonal e controle a distância.",
+        "3. Avance em ziguezague enquanto mantém o jo entre você e o uke.",
+        "4. Use um movimento circular para dominar a linha do ataque.",
+        "5. Finalize com controle do centro e o jo apontado para o uke.",
+      ],
+    },
+    {
+      id: "tanto-dan",
+      title: "Kata de Tanto para Dan",
+      description:
+        "Exemplo de kata com tanto que desafia a resposta em espaço curto, controle do braço e transição para imobilização.",
+      steps: [
+        "1. Uke avança com ataque de corte curto, mantenha a base firme.",
+        "2. Bloqueie com a mão livre e segure o pulso do uke.",
+        "3. Gire o corpo para o lado e neutralize o tanto.",
+        "4. Mantenha o controle do braço do uke enquanto prepara a projeção.",
+        "5. Finalize com imobilização ou controle seguro do tanto.",
+      ],
+    },
+  ];
 
   const filtradas = tecnicas.filter((t) => {
     const matchBusca =
@@ -127,6 +154,40 @@ export default function Tecnicas() {
         </div>
       </div>
 
+      {filtroKyu === "Dan" && (
+        <div className="px-5 py-4 space-y-4 max-w-lg mx-auto">
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-5">
+            <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+              Exemplos de katas de armas para Dan
+            </h2>
+            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+              Referências rápidas para katas com jo e tanto, pensadas para quem
+              treina no nível Dan.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {katasArmasDan.map((item) => (
+              <article
+                key={item.id}
+                className="rounded-3xl border border-zinc-100 dark:border-zinc-800/60 bg-white dark:bg-zinc-950 p-5"
+              >
+                <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+                  {item.description}
+                </p>
+                <ul className="mt-3 space-y-2 text-sm text-zinc-600 dark:text-zinc-300 list-disc list-inside">
+                  {item.steps.map((step) => (
+                    <li key={step}>{step}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* List */}
       <div className="px-5 py-4 space-y-3 max-w-lg mx-auto">
         {filtradas.length === 0 && (
@@ -136,7 +197,10 @@ export default function Tecnicas() {
           </div>
         )}
         {filtradas.map((tecnica) => {
-          const cat = categoriasCores[tecnica.categoria] || {};
+          const catKey = /** @type {keyof typeof categoriasCores} */ (
+            tecnica.categoria
+          );
+          const cat = categoriasCores[catKey] || {};
           return (
             <Link
               key={tecnica.id}
