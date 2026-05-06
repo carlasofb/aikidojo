@@ -1,0 +1,16 @@
+{
+  "name": "AikiDojo",
+  "short_name": "AikiDojo",
+  "description": "App de Aikido",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#22c55e",
+  "icons": [
+    {
+      "src": "/green-circle.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
