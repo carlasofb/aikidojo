@@ -16,6 +16,7 @@ import {
   Mail,
   Dumbbell,
   Heart,
+  Video,
 } from "lucide-react";
 import { useTheme } from "../../components/ThemeContext";
 
@@ -89,6 +90,13 @@ const betaCards = [
     title: "Eventos",
     description: "Treinos, workshops e encontros do clube.",
     accent: "from-slate-500 to-slate-700",
+  },
+  {
+    to: "/katas-armas",
+    icon: Video,
+    title: "Katas de Armas",
+    description: "Katas com bastão, espada e faca, com espaço para vídeos.",
+    accent: "from-orange-500 to-amber-600",
   },
 ];
 

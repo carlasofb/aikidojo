@@ -28,6 +28,7 @@ import Perfil from "./pages/beta/Perfil";
 import Feedback from "./pages/beta/Feedback";
 import Quiz from "./pages/beta/Quiz";
 import VidaDiaria from "./pages/beta/VidaDiaria";
+import KatasArmas from "./pages/beta/KatasArmas";
 
 const ScrollToTop = () => {
   const { pathname, search, hash } = useLocation();
@@ -78,6 +79,7 @@ const AuthenticatedApp = () => {
       <Route path="/feedback" element={<Feedback />} />
       <Route path="/quiz" element={<Quiz />} />
       <Route path="/vida-diaria" element={<VidaDiaria />} />
+      <Route path="/katas-armas" element={<KatasArmas />} />
       <Route path="/progresso" element={<Progresso />} />
       <Route path="/exames" element={<Noticias />} />
       <Route path="/eventos" element={<Eventos />} />
