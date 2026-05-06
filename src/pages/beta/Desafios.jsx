@@ -5,7 +5,7 @@ import { useTheme } from "../../components/ThemeContext";
 import { weeklyChallenges } from "../../components/betaData";
 
 export default function Desafios() {
-  const { dark, toggle } = useTheme();
+  const { dark } = useTheme();
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 transition-colors duration-300">
@@ -30,10 +30,7 @@ export default function Desafios() {
               </h1>
             </div>
           </div>
-          <button
-            onClick={toggle}
-            className="w-10 h-10 rounded-2xl bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center"
-          >
+          <button className="w-10 h-10 rounded-2xl bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center">
             <Flag
               size={18}
               className={dark ? "text-violet-400" : "text-zinc-700"}

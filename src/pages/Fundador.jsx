@@ -157,7 +157,7 @@ const stats = [
 ];
 
 export default function Fundador() {
-  const { dark, toggle } = useTheme();
+  const { dark } = useTheme();
   const [filtro, setFiltro] = useState("todos");
 
   const filtrados =
@@ -176,16 +176,6 @@ export default function Fundador() {
         <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
           O Fundador
         </span>
-        <button
-          onClick={toggle}
-          className="w-9 h-9 rounded-xl flex items-center justify-center bg-zinc-100 dark:bg-zinc-800"
-        >
-          {dark ? (
-            <Sun size={16} className="text-amber-400" />
-          ) : (
-            <Moon size={16} className="text-zinc-600" />
-          )}
-        </button>
       </div>
 
       {/* Hero */}

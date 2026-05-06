@@ -49,7 +49,7 @@ const kyuList = [
 ];
 
 export default function Tecnicas() {
-  const { dark, toggle } = useTheme();
+  const { dark } = useTheme();
   const [busca, setBusca] = useState("");
   const [filtroKyu, setFiltroKyu] = useState("Todas");
 
@@ -87,16 +87,6 @@ export default function Tecnicas() {
               </p>
             </div>
           </div>
-          <button
-            onClick={toggle}
-            className="w-9 h-9 rounded-xl flex items-center justify-center bg-zinc-100 dark:bg-zinc-800"
-          >
-            {dark ? (
-              <Sun size={16} className="text-amber-400" />
-            ) : (
-              <Moon size={16} className="text-zinc-600" />
-            )}
-          </button>
         </div>
 
         {/* Search */}
