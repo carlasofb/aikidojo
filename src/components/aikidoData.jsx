@@ -231,13 +231,13 @@ export const tecnicas = [
     nome: "Ikkyo",
     japones: "一教",
     subtitulo: "Primeira Técnica",
-    categoria: "Controle",
+    categoria: "Controlo",
     dificuldade: "Iniciante",
     kyu: ["5º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu"],
     descricao:
-      "Ikkyo é a primeira e mais fundamental das técnicas de controle do Aikido. Utiliza a força do corpo inteiro para controlar o braço e o cotovelo do uke, levando-o ao chão de forma harmoniosa.",
+      "Ikkyo é a primeira e mais fundamental das técnicas de controlo do Aikido. Utiliza a força do corpo inteiro para controlar o braço e o cotovelo do uke, levando-o ao chão de forma harmoniosa.",
     pontosClave: [
-      "Controle do cotovelo com a mão inteira",
+      "Controlo do cotovelo com a mão inteira",
       "Movimento de entrada (irimi) ou giratório (tenkan)",
       "Aplicar pressão descendente, não para baixo",
       "Manter alinhamento do centro (hara)",
@@ -251,11 +251,11 @@ export const tecnicas = [
     nome: "Nikyo",
     japones: "二教",
     subtitulo: "Segunda Técnica",
-    categoria: "Controle",
+    categoria: "Controlo",
     dificuldade: "Iniciante",
     kyu: ["4º Kyu"],
     descricao:
-      "Nikyo aplica uma torção específica no punho que cria uma pressão intensa no pulso e no antebraço. É uma técnica de controle eficaz que pode ser aplicada a partir de vários ataques.",
+      "Nikyo aplica uma torção específica no punho que cria uma pressão intensa no pulso e no antebraço. É uma técnica de controlo eficaz que pode ser aplicada a partir de vários ataques.",
     pontosClave: [
       "Apreensão específica do punho com ambas as mãos",
       "Rotação do punho em direção ao ombro do uke",
@@ -271,7 +271,7 @@ export const tecnicas = [
     nome: "Sankyo",
     japones: "三教",
     subtitulo: "Terceira Técnica",
-    categoria: "Controle",
+    categoria: "Controlo",
     dificuldade: "Intermediário",
     kyu: ["3º Kyu", "2º Kyu"],
     descricao:
@@ -291,7 +291,7 @@ export const tecnicas = [
     nome: "Yonkyo",
     japones: "四教",
     subtitulo: "Quarta Técnica",
-    categoria: "Controle",
+    categoria: "Controlo",
     dificuldade: "Intermediário",
     kyu: ["3º Kyu", "2º Kyu", "1º Kyu"],
     descricao:
@@ -311,15 +311,15 @@ export const tecnicas = [
     nome: "Gokyo",
     japones: "五教",
     subtitulo: "Quinta Técnica",
-    categoria: "Controle",
+    categoria: "Controlo",
     dificuldade: "Intermediário",
     kyu: ["2º Kyu", "1º Kyu"],
     descricao:
-      "Gokyo é similar ao Ikkyo mas com uma apreensão diferente que permite neutralizar ataques com armas. O controle do pulso é invertido em relação ao Ikkyo, especialmente eficaz contra faca.",
+      "Gokyo é similar ao Ikkyo mas com uma apreensão diferente que permite neutralizar ataques com armas. O controlo do pulso é invertido em relação ao Ikkyo, especialmente eficaz contra faca.",
     pontosClave: [
       "Apreensão do pulso com o polegar para fora",
       "Especialmente eficaz contra ataques de faca",
-      "Controle do punho e cotovelo simultaneamente",
+      "Controlo do punho e cotovelo simultaneamente",
       "Movimento de entrada rápida e decisiva",
       "Finalização com osae (imobilização)",
     ],
@@ -340,7 +340,7 @@ export const tecnicas = [
       "Entrar profundamente ao lado do uke (irimi)",
       "Desviar o ataque, não bloqueá-lo",
       "Girar o centro para levar o uke para trás",
-      "Braço de controle no pescoço/peito do uke",
+      "Braço de controlo no pescoço/peito do uke",
       "Projeção com rotação do corpo inteiro",
     ],
     ataques: ["Shomen uchi", "Yokomen uchi", "Tsuki", "Katate dori"],
@@ -509,7 +509,7 @@ export const tecnicas = [
     dificuldade: "Intermediário",
     kyu: ["Dan"],
     descricao:
-      "Ude Kime Nage usa o próprio braço de nage como fulcro para criar uma hiper-extensão do cotovelo do uke, forçando-o a projetar-se para a frente. É uma técnica de controle articular convertida em projeção.",
+      "Ude Kime Nage usa o próprio braço de nage como fulcro para criar uma hiper-extensão do cotovelo do uke, forçando-o a projetar-se para a frente. É uma técnica de controlo articular convertida em projeção.",
     pontosClave: [
       "Sair da linha do ataque (tsuki ou shomen) e capturar o braço",
       "Usar o próprio antebraço ou ombro como alavanca",
@@ -675,7 +675,7 @@ export const conceitos = [
     descricao:
       "Irimi significa 'entrar no corpo' do oponente — uma entrada direta e profunda que coloca o nage ao lado ou atrás do uke.",
     detalhes:
-      "Irimi é o princípio de ir em direção ao perigo em vez de recuar. Ao entrar profundamente, o nage sai da linha do ataque enquanto se coloca numa posição de controle. Irimi e Tenkan são os dois pilares do movimento no Aikido.",
+      "Irimi é o princípio de ir em direção ao perigo em vez de recuar. Ao entrar profundamente, o nage sai da linha do ataque enquanto se coloca numa posição de controlo. Irimi e Tenkan são os dois pilares do movimento no Aikido.",
     praticas: [
       "Ikkyo omote como irimi básico",
       "Irimi nage como aplicação direta",
@@ -1980,7 +1980,7 @@ export const glossario = [
 ];
 
 export const categoriasCores = {
-  Controle: {
+  Controlo: {
     bg: "bg-blue-100 dark:bg-blue-900/30",
     text: "text-blue-700 dark:text-blue-300",
     dot: "bg-blue-500",

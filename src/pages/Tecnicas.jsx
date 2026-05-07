@@ -62,20 +62,20 @@ export default function Tecnicas() {
         "2. Desvie o ataque do uke com um bloqueio diagonal e controle a distância.",
         "3. Avance em ziguezague enquanto mantém o jo entre você e o uke.",
         "4. Use um movimento circular para dominar a linha do ataque.",
-        "5. Finalize com controle do centro e o jo apontado para o uke.",
+        "5. Finalize com controlo do centro e o jo apontado para o uke.",
       ],
     },
     {
       id: "tanto-dan",
       title: "Kata de Tanto para Dan",
       description:
-        "Exemplo de kata com tanto que desafia a resposta em espaço curto, controle do braço e transição para imobilização.",
+        "Exemplo de kata com tanto que desafia a resposta em espaço curto, controlo do braço e transição para imobilização.",
       steps: [
         "1. Uke avança com ataque de corte curto, mantenha a base firme.",
         "2. Bloqueie com a mão livre e segure o pulso do uke.",
         "3. Gire o corpo para o lado e neutralize o tanto.",
-        "4. Mantenha o controle do braço do uke enquanto prepara a projeção.",
-        "5. Finalize com imobilização ou controle seguro do tanto.",
+        "4. Mantenha o controlo do braço do uke enquanto prepara a projeção.",
+        "5. Finalize com imobilização ou controlo seguro do tanto.",
       ],
     },
   ];

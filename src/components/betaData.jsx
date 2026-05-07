@@ -58,7 +58,7 @@ export const eventos = [
 export const initialStudyProgress = [
   {
     id: "ikkyo",
-    title: "Ikkyo — Técnicas de controle",
+    title: "Ikkyo — Técnicas de controlo",
     subtitle: "Rever a entrada, alavanca e osae",
     category: "Técnica",
     completed: true,
@@ -145,7 +145,7 @@ export const resources = [
     description:
       "Vídeo passo a passo para não esquecer a posição do corpo e o controlo do braço.",
     type: "Vídeo",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://www.example.com/ikyo",
   },
   {
     id: "r2",
