@@ -10,6 +10,8 @@ import {
   BookMarked,
   ChevronRight,
   TestTube,
+  GraduationCap,
+  Users,
 } from "lucide-react";
 import { tecnicas, conceitos } from "../components/aikidoData";
 
@@ -17,6 +19,15 @@ export default function Home() {
   const { dark, toggle } = useTheme();
 
   const sections = [
+    {
+      to: "/iniciantes",
+      icon: GraduationCap,
+      label: "Guia de Iniciantes",
+      desc: "Ataques, quedas e significado do Aikido",
+      accent: "from-emerald-500 to-teal-600",
+      bg: "bg-emerald-50 dark:bg-emerald-950/40",
+      border: "border-emerald-100 dark:border-emerald-900/50",
+    },
     {
       to: "/tecnicas",
       icon: BookOpen,
@@ -46,6 +57,15 @@ export default function Home() {
       accent: "from-teal-500 to-emerald-600",
       bg: "bg-teal-50 dark:bg-teal-950/40",
       border: "border-teal-100 dark:border-teal-900/50",
+    },
+    {
+      to: "/linhagem",
+      icon: Users,
+      label: "Linhagem",
+      desc: "Mestres e discípulos notáveis",
+      accent: "from-violet-500 to-indigo-600",
+      bg: "bg-violet-50 dark:bg-violet-950/40",
+      border: "border-violet-100 dark:border-violet-900/50",
     },
     {
       to: "/beta",
