@@ -12,6 +12,14 @@ export const tecnicaImagens = {
       url: "https://media.base44.com/images/public/69b471f424b585c11577b1b3/1ca329f21_generated_image.png",
       legenda: "Osae — imobilização final no chão",
     },
+    {
+      url: "https://storage.ghost.io/c/84/bd/84bd9b0b-990e-4371-9128-fca580f59106/content/images/2019/04/ct39-03-1.jpg",
+      legenda: "Posicionamento para o deslocamento",
+    },
+    {
+      url: "https://theaikidowarrior.com/wp-content/uploads/2016/04/osensei-ikkyo-pin.jpg",
+      legenda: "O' Sensei a fazer imobilização final no chão",
+    },
   ],
   nikyo: [
     {
@@ -225,13 +233,24 @@ export const tecnicaImagens = {
   ],
 };
 
+export const tecnicaVideos = {
+  ikkyo: [
+    {
+      youtubeId: "o4YI6zYNL1Q",
+      titulo: "Ikkyo — Segredos da técnica fundamental (6º Dan)",
+    },
+    { youtubeId: "dHo1JX_ar_o", titulo: "Ikkyo — Tutorial passo a passo" },
+    { youtubeId: "SVdY3AwlH_w", titulo: "Como fazer Ikkyo — Aula de Aikido" },
+  ],
+};
+
 export const tecnicas = [
   {
     id: "ikkyo",
     nome: "Ikkyo",
     japones: "一教",
-    subtitulo: "Primeira Técnica",
-    categoria: "Controlo",
+    subtitulo: "Primeiro princípio • Ude osae • Prisão do braço",
+    categoria: "Imobilização",
     dificuldade: "Iniciante",
     kyu: ["5º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu"],
     descricao:
@@ -243,7 +262,23 @@ export const tecnicas = [
       "Manter alinhamento do centro (hara)",
       "Finalizar com imobilização no chão (osae)",
     ],
-    ataques: ["Shomen uchi", "Yokomen uchi", "Katate dori"],
+    ataques: [
+      "Shomen uchi",
+      "Ai Hanmi Katate Dori",
+      "Kata Dori",
+      "Katate Dori",
+      "Ushiro Katate Dori Kubi Shime",
+      "Morote Dori",
+      "Kata Dori Men Uchi",
+      "Yokomen uchi",
+      "Ushiro Ryote Dori",
+      "Ushiro Ryo Kata Dori",
+      "Muna Dori",
+      "Chudan Tsuki",
+      "Jodan Tsuki",
+      "Ushiro Eri Dori",
+      "Ushiro Eri Dori Men Uchi",
+    ],
     variantes: ["Omote (por fora)", "Ura (por dentro, girando)"],
   },
   {
@@ -569,6 +604,71 @@ export const tecnicas = [
     variantes: ["Omote", "Com ou sem tenkan inicial"],
   },
 ];
+
+export const tecnicaVariantes = {
+  ikkyo: [
+    {
+      nome: "Omote (表)",
+      subtitulo: "Entrada pela frente",
+      descricao:
+        "Na versão omote, nage entra diretamente pela frente do uke — irimi. O movimento é linear e decisivo: nage avança para o lado do braço atacante, controla o cotovelo e o pulso, e conduz o uke para baixo e para a frente até ao chão.",
+      pontos: [
+        "Entrar com irimi para o lado do ataque",
+        "Controlar o cotovelo com a mão exterior e o pulso com a mão interior",
+        "Conduzir o braço do uke em arco descendente para a frente",
+        "Finalizar com os joelhos no chão — osae com pressão no cotovelo",
+      ],
+    },
+    {
+      nome: "Ura (裏)",
+      subtitulo: "Entrada com giro para trás",
+      descricao:
+        "Na versão ura, nage desvia-se do ataque e faz um tenkan — um pivô que o coloca ao lado e atrás do uke. O movimento é circular: nage roda 180° enquanto controla o braço do uke, terminando com o uke conduzido ao chão por trás.",
+      pontos: [
+        "Desviar-se ligeiramente e iniciar o tenkan (pivô)",
+        "Manter o controlo do cotovelo e pulso durante a rotação",
+        "Girar 180° arrastando o uke consigo",
+        "Finalizar em osae — uke com o rosto para baixo, braço esticado",
+      ],
+    },
+  ],
+};
+
+export const kyuCores = {
+  "5º Kyu": {
+    bg: "bg-white border border-zinc-300 dark:bg-zinc-100",
+    text: "text-zinc-700",
+  },
+  "4º Kyu": {
+    bg: "bg-yellow-100 dark:bg-yellow-300",
+    text: "text-yellow-800",
+  },
+  "3º Kyu": {
+    bg: "bg-orange-200 dark:bg-orange-300",
+    text: "text-orange-900",
+  },
+  "2º Kyu": {
+    bg: "bg-green-200 dark:bg-green-300",
+    text: "text-green-900",
+  },
+  "1º Kyu": {
+    bg: "bg-blue-200 dark:bg-blue-300",
+    text: "text-blue-900",
+  },
+  Dan: {
+    bg: "bg-zinc-800 dark:bg-zinc-900",
+    text: "text-zinc-100",
+  },
+};
+
+// Associação ataque → kyu onde é introduzido no contexto da técnica
+export const tecnicaAtaqueKyu = {
+  ikkyo: {
+    "Shomen uchi": "5º Kyu",
+    "Yokomen uchi": "4º Kyu",
+    "Katate dori": "3º Kyu",
+  },
+};
 
 export const conceitos = [
   {
@@ -1980,6 +2080,11 @@ export const glossario = [
 ];
 
 export const categoriasCores = {
+  Imobilização: {
+    bg: "bg-blue-100 dark:bg-blue-900/30",
+    text: "text-blue-700 dark:text-blue-300",
+    dot: "bg-blue-500",
+  },
   Controlo: {
     bg: "bg-blue-100 dark:bg-blue-900/30",
     text: "text-blue-700 dark:text-blue-300",

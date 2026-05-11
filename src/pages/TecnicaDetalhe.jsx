@@ -16,8 +16,14 @@ import {
   categoriasCores,
   dificuldadeCores,
   tecnicaImagens,
+  tecnicaVideos,
+  tecnicaVariantes,
+  kyuCores,
+  tecnicaAtaqueKyu,
 } from "../components/aikidoData";
 import TecnicaCarrossel from "../components/TecnicaCarrossel";
+import VideoCarrossel from "../components/VideoCarrossel";
+import VariantesAccordion from "../components/VariantesAccordion";
 
 export default function TecnicaDetalhe() {
   const { id } = useParams();
@@ -78,11 +84,11 @@ export default function TecnicaDetalhe() {
             >
               {tecnica.categoria}
             </span>
-            <span
+            {/* <span
               className={`px-3 py-1 rounded-lg text-xs font-semibold ${dif.bg} ${dif.text}`}
             >
               {tecnica.dificuldade}
-            </span>
+            </span> */}
           </div>
         </div>
 
@@ -124,6 +130,30 @@ export default function TecnicaDetalhe() {
           </div>
         </div>
 
+        {/* Variants */}
+        <div className="mb-8">
+          <div className="flex items-center gap-2 mb-3">
+            <Layers size={16} className="text-teal-500" />
+            <h2 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+              Variantes
+            </h2>
+          </div>
+          {tecnicaVariantes[tecnica.id] ? (
+            <VariantesAccordion variantes={tecnicaVariantes[tecnica.id]} />
+          ) : (
+            <div className="flex flex-wrap gap-2">
+              {tecnica.variantes.map((v, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1.5 rounded-lg bg-teal-50 dark:bg-teal-950/30 text-teal-700 dark:text-teal-300 text-xs font-medium border border-teal-100 dark:border-teal-900/50"
+                >
+                  {v}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* Attacks */}
         <div className="mb-6">
           <div className="flex items-center gap-2 mb-3">
@@ -133,36 +163,33 @@ export default function TecnicaDetalhe() {
             </h2>
           </div>
           <div className="flex flex-wrap gap-2">
-            {tecnica.ataques.map((a, i) => (
-              <span
-                key={i}
-                className="px-3 py-1.5 rounded-lg bg-orange-50 dark:bg-orange-950/30 text-orange-700 dark:text-orange-300 text-xs font-medium border border-orange-100 dark:border-orange-900/50"
-              >
-                {a}
-              </span>
-            ))}
+            {tecnica.ataques.map((a, i) => {
+              const kyu = tecnicaAtaqueKyu[tecnica.id]?.[a];
+              const cor = kyu ? kyuCores[kyu] : null;
+              return cor ? (
+                <div key={i} className="flex flex-col items-center gap-0.5">
+                  <span
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold ${cor.bg} ${cor.text}`}
+                  >
+                    {a}
+                  </span>
+                </div>
+              ) : (
+                <span
+                  key={i}
+                  className="px-3 py-1.5 rounded-lg bg-orange-50 dark:bg-orange-950/30 text-orange-700 dark:text-orange-300 text-xs font-medium border border-orange-100 dark:border-orange-900/50"
+                >
+                  {a}
+                </span>
+              );
+            })}
           </div>
         </div>
 
-        {/* Variants */}
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-3">
-            <Layers size={16} className="text-teal-500" />
-            <h2 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
-              Variantes
-            </h2>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {tecnica.variantes.map((v, i) => (
-              <span
-                key={i}
-                className="px-3 py-1.5 rounded-lg bg-teal-50 dark:bg-teal-950/30 text-teal-700 dark:text-teal-300 text-xs font-medium border border-teal-100 dark:border-teal-900/50"
-              >
-                {v}
-              </span>
-            ))}
-          </div>
-        </div>
+        {/* Video carousel */}
+        {tecnicaVideos[tecnica.id] && (
+          <VideoCarrossel videos={tecnicaVideos[tecnica.id]} />
+        )}
 
         {/* Navigation between techniques */}
         <div className="flex gap-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
