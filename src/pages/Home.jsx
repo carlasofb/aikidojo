@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useTheme } from "../components/ThemeContext";
@@ -15,8 +15,77 @@ import {
 } from "lucide-react";
 import { tecnicas, conceitos } from "../components/aikidoData";
 
+const frasesSensei = [
+  "O Aikido não é uma técnica para derrubar o inimigo pela força — é o caminho da paz para a humanidade.",
+  "Para praticar Aikido corretamente, deve aceitar o mundo como ele é e construir a partir disso.",
+  "A vitória sobre si mesmo é o verdadeiro budo. Budo significa amar e nutrir todos os seres, não lutar uns com os outros.",
+  "O espírito do Aikido é o grande amor pelo universo — amor que tudo sustenta.",
+  "Treine arduamente com a espada e o bastão do bokken dia após dia. Assim te tornarás o mestre do espírito.",
+  "No Aikido nunca atacamos. Um ataque é prova de que alguém perdeu o controlo.",
+  "O Aikido é medicina para um mundo doente.",
+  "Cria cada dia um ser humano novo. Não pares de criar a ti mesmo.",
+  "A vida em si é sempre um professor, se vivermos com os olhos abertos.",
+  "A chave para o budo é honestidade. Com honestidade no coração, torna-te um com o céu e a terra.",
+  "O caminho do guerreiro é o caminho do amor divino.",
+  "O Aikido não tem adversários. Ele absorve e harmoniza com tudo.",
+  "Quando atacado, passa à ação antes mesmo que o adversário pense em atacar.",
+  "Pratica o caminho com o corpo e a mente juntos — assim encontrarás a essência.",
+];
+
+const fundos = [
+  // 4 gradientes
+  {
+    type: "gradient",
+    style: {
+      background:
+        "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%)",
+    },
+  },
+  {
+    type: "gradient",
+    style: {
+      background:
+        "linear-gradient(135deg, #0d1b2a 0%, #1b4332 50%, #081c15 100%)",
+    },
+  },
+  {
+    type: "gradient",
+    style: { background: "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)" },
+  },
+  {
+    type: "gradient",
+    style: {
+      background:
+        "linear-gradient(135deg, #1a0533 0%, #6b2fa0 50%, #c0392b 100%)",
+    },
+  },
+  // 4 imagens Enso geradas
+  {
+    type: "image",
+    url: "https://media.base44.com/images/public/69b471f424b585c11577b1b3/434520a68_generated_image.png",
+  }, // cerejeira
+  {
+    type: "image",
+    url: "https://media.base44.com/images/public/69b471f424b585c11577b1b3/5df5bbb3e_generated_image.png",
+  }, // torii
+  {
+    type: "image",
+    url: "https://media.base44.com/images/public/69b471f424b585c11577b1b3/4b8c00cb8_generated_image.png",
+  }, // aikidokas
+  {
+    type: "image",
+    url: "https://media.base44.com/images/public/69b471f424b585c11577b1b3/3a8a28242_generated_image.png",
+  }, // fuji
+];
+
 export default function Home() {
   const { dark, toggle } = useTheme();
+  const [frase] = useState(
+    () => frasesSensei[Math.floor(Math.random() * frasesSensei.length)],
+  );
+  const [fundo] = useState(
+    () => fundos[Math.floor(Math.random() * fundos.length)],
+  );
 
   const sections = [
     {
@@ -83,7 +152,17 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-zinc-950 transition-colors duration-300">
       {/* Header */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950" />
+        {fundo.type === "image" ? (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${fundo.url})` }}
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </>
+        ) : (
+          <div className="absolute inset-0" style={fundo.style} />
+        )}
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -127,8 +206,7 @@ export default function Home() {
       <div className="px-6 py-8 border-b border-zinc-100 dark:border-zinc-800/60">
         <blockquote className="text-center">
           <p className="text-zinc-600 dark:text-zinc-400 text-sm italic leading-relaxed">
-            "O Aikido não usa a força bruta para vencer o inimigo — <br />
-            usa o amor universal para transformar o conflito em harmonia."
+            "{frase}"
           </p>
           <footer className="mt-2 text-xs text-zinc-400 dark:text-zinc-600 tracking-wider uppercase">
             — Morihei Ueshiba, O'Sensei
