@@ -107,6 +107,7 @@ export default function Home() {
       bg: "bg-blue-50 dark:bg-blue-950/40",
       border: "border-blue-100 dark:border-blue-900/50",
     },
+    // juntar estes 3 horizontalmente
     {
       to: "/conceitos",
       icon: Brain,
@@ -140,7 +141,7 @@ export default function Home() {
       to: "/beta",
       icon: TestTube,
       label: "BETA",
-      desc: "Notícias, progresso e eventos do clube",
+      desc: "Mais recursos, eventos do clube, perfil (funcionalidades não completas)",
       count: "Novo",
       accent: "from-emerald-500 to-lime-600",
       bg: "bg-emerald-50 dark:bg-emerald-950/40",
@@ -215,10 +216,10 @@ export default function Home() {
       </div>
 
       {/* Navigation sections */}
-      <div className="px-5 py-7 space-y-4 max-w-lg mx-auto">
-        <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-600 tracking-widest uppercase px-1 mb-5">
+      <div className="px-5 py-7 space-y-4 max-w-xl mx-auto">
+        {/*  <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-600 tracking-widest uppercase px-1 mb-5">
           Explorar
-        </p>
+        </p> */}
         {sections.map(
           ({ to, icon: Icon, label, desc, count, accent, bg, border }) => (
             <Link
@@ -236,9 +237,9 @@ export default function Home() {
                   <span className="font-semibold text-zinc-900 dark:text-zinc-100 text-base">
                     {label}
                   </span>
-                  <span className="text-xs text-zinc-400 dark:text-zinc-600 font-medium">
+                  {/* <span className="text-xs text-zinc-400 dark:text-zinc-600 font-medium">
                     {count}
-                  </span>
+                  </span> */}
                 </div>
                 <p className="text-sm text-zinc-500 dark:text-zinc-500 mt-0.5">
                   {desc}
@@ -254,19 +255,19 @@ export default function Home() {
       </div>
 
       {/* Founder info */}
-      <div className="mx-5 mb-8 p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 max-w-lg mx-auto">
+      <div className="mx-5 mb-8 p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 max-w-xl mx-auto">
         <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-600 tracking-widest uppercase mb-3">
           O Fundador
         </p>
         <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 flex-shrink-0 flex items-center justify-center">
+          {/* <div className="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 flex-shrink-0 flex items-center justify-center">
             <span
               className="text-white text-sm font-light"
               style={{ fontFamily: "serif" }}
             >
               植
             </span>
-          </div>
+          </div> */}
           <div>
             <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
               Morihei Ueshiba (1883–1969)
@@ -274,7 +275,8 @@ export default function Home() {
             <p className="text-zinc-500 dark:text-zinc-500 text-xs mt-1 leading-relaxed">
               Mestre de artes marciais japonês que sintetizou décadas de treino
               em Jujutsu, Kenjutsu e Spear fighting para criar o Aikido — uma
-              arte que enfatiza harmonia, ética e paz.{" "}
+              arte que enfatiza harmonia, ética e paz.
+              <br />
               <Link
                 to="/fundador"
                 className="font-semibold text-zinc-900 dark:text-zinc-100 underline underline-offset-2 hover:opacity-70 transition-opacity"

@@ -22,60 +22,11 @@ import { useTheme } from "../../components/ThemeContext";
 
 const betaCards = [
   {
-    to: "/treino",
-    icon: Dumbbell,
-    title: "Plano de treino",
-    description: "O que treinar hoje com checklist pessoal.",
-    accent: "from-sky-500 to-indigo-600",
-  },
-  {
-    to: "/desafios",
-    icon: Flag,
-    title: "Desafios",
-    description: "Metas e desafios para manter o foco na prática.",
-    accent: "from-violet-500 to-fuchsia-600",
-  },
-  {
-    to: "/progresso",
-    icon: Signal,
-    title: "Progresso",
-    description: "Vê percentuais, categorias e streaks de estudo.",
-    accent: "from-emerald-500 to-lime-600",
-  },
-  {
-    to: "/recursos",
-    icon: BookOpen,
-    title: "Recursos",
-    description: "Dicas, vídeos e material para praticar fora do dojo.",
-    accent: "from-cyan-500 to-sky-600",
-  },
-  {
-    to: "/vida-diaria",
-    icon: Heart,
-    title: "Vida diária",
-    description: "Como aplicar o Aikido na rotina e em situações reais.",
-    accent: "from-pink-500 to-rose-600",
-  },
-  {
     to: "/perfil",
     icon: User,
     title: "Perfil",
     description: "Objetivos, faixa atual e pontos da comunidade.",
     accent: "from-amber-500 to-orange-600",
-  },
-  {
-    to: "/feedback",
-    icon: MessageCircle,
-    title: "Sugestões",
-    description: "Diz-nos o que o clube precisa ou o tema que queres.",
-    accent: "from-rose-500 to-pink-600",
-  },
-  {
-    to: "/quiz",
-    icon: HelpCircle,
-    title: "Quiz",
-    description: "Testa o teu vocabulário e cultura de Aikido.",
-    accent: "from-lime-500 to-emerald-600",
   },
   {
     to: "/exames",
@@ -92,11 +43,81 @@ const betaCards = [
     accent: "from-slate-500 to-slate-700",
   },
   {
+    to: "#",
+    icon: Video,
+    title: "História do Aikido em Portugal",
+    description: "...",
+    accent: "from-orange-500 to-amber-600",
+  },
+  {
+    to: "#",
+    icon: Video,
+    title: "Guarda, deslocamentos, técnicas de combate/defesa, outros ataques",
+    description: "...",
+    accent: "from-orange-500 to-amber-600",
+  },
+  {
     to: "/katas-armas",
     icon: Video,
     title: "Katas de Armas",
     description: "Katas com bastão, espada e faca, com espaço para vídeos.",
     accent: "from-orange-500 to-amber-600",
+  },
+  {
+    to: "/vida-diaria",
+    icon: Heart,
+    title: "Vida diária",
+    description: "Como aplicar o Aikido na rotina e em situações reais.",
+    accent: "from-pink-500 to-rose-600",
+  },
+  {
+    to: "#",
+    icon: Video,
+    title: "Lições/termos",
+    description: "...",
+    accent: "from-orange-500 to-amber-600",
+  },
+  {
+    to: "/feedback",
+    icon: MessageCircle,
+    title: "Sugestões",
+    description: "Diz-nos o que o clube precisa ou o tema que queres.",
+    accent: "from-rose-500 to-pink-600",
+  },
+  {
+    to: "/treino",
+    icon: Dumbbell,
+    title: "-Plano de treino-",
+    description: "O que treinar hoje com checklist pessoal.",
+    accent: "from-sky-500 to-indigo-600",
+  },
+  {
+    to: "/desafios",
+    icon: Flag,
+    title: "-Desafios-",
+    description: "Metas e desafios para manter o foco na prática.",
+    accent: "from-violet-500 to-fuchsia-600",
+  },
+  {
+    to: "/progresso",
+    icon: Signal,
+    title: "-Progresso-",
+    description: "Vê percentuais, categorias e streaks de estudo.",
+    accent: "from-emerald-500 to-lime-600",
+  },
+  {
+    to: "/recursos",
+    icon: BookOpen,
+    title: "-Recursos-?",
+    description: "Dicas, vídeos e material para praticar fora do dojo.",
+    accent: "from-cyan-500 to-sky-600",
+  },
+  {
+    to: "/quiz",
+    icon: HelpCircle,
+    title: "-Quiz-",
+    description: "Testa o teu vocabulário e cultura de Aikido.",
+    accent: "from-lime-500 to-emerald-600",
   },
 ];
 
@@ -147,23 +168,14 @@ export default function Beta() {
               </h1>
             </div>
           </div>
-          <button
-            onClick={toggle}
-            className="w-10 h-10 rounded-2xl bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center"
-          >
-            <Sparkles
-              size={18}
-              className={dark ? "text-amber-400" : "text-zinc-700"}
-            />
-          </button>
         </div>
       </div>
 
       <div className="px-5 py-6 max-w-3xl mx-auto space-y-5">
         <div className="rounded-3xl border border-zinc-100 dark:border-zinc-800/60 bg-zinc-50 dark:bg-zinc-900 p-5 text-sm text-zinc-600 dark:text-zinc-400">
-          Estas funcionalidades estão em fase BETA. Já podes explorar plano de
-          treino, desafios, progresso pessoal, recursos, perfil, quizzes e a
-          galeria de exames.
+          Estas funcionalidades estão em fase BETA, ainda a ser desenvolvidas.
+          Já podes explorar plano de treino, desafios, progresso pessoal,
+          recursos, perfil, quizzes e a galeria de exames. E dá sugestões :)
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
