@@ -24,6 +24,7 @@ import {
 import TecnicaCarrossel from "../components/TecnicaCarrossel";
 import VideoCarrossel from "../components/VideoCarrossel";
 import VariantesAccordion from "../components/VariantesAccordion";
+import MediaCarrossel from "../components/MediaCarrossel";
 
 export default function TecnicaDetalhe() {
   const { id } = useParams();
@@ -58,9 +59,9 @@ export default function TecnicaDetalhe() {
         >
           <ArrowLeft size={18} className="text-zinc-700 dark:text-zinc-300" />
         </Link>
-        <span className="text-sm font-medium text-zinc-500 dark:text-zinc-500">
+        {/* <span className="text-sm font-medium text-zinc-500 dark:text-zinc-500">
           {idx + 1} / {tecnicas.length}
-        </span>
+        </span> */}
       </div>
 
       <div className="px-5 py-6 max-w-lg mx-auto">
@@ -92,18 +93,27 @@ export default function TecnicaDetalhe() {
           </div>
         </div>
 
-        {/* Image carousel */}
-        <TecnicaCarrossel
-          imagens={tecnicaImagens[tecnica.id]}
-          nome={tecnica.nome}
-        />
-
         {/* Description */}
         <div className="mb-6 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800">
           <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
             {tecnica.descricao}
+            {/* Image carousel */}
+            {/*  <TecnicaCarrossel
+              imagens={tecnicaImagens[tecnica.id]}
+              nome={tecnica.nome}
+            /> */}
+            {/* Video carousel */}
+            {/* {tecnicaVideos[tecnica.id] && (
+              <VideoCarrossel videos={tecnicaVideos[tecnica.id]} />
+            )} */}
           </p>
         </div>
+
+        {/* Media carousel */}
+        <MediaCarrossel
+          imagens={tecnicaImagens[tecnica.id] || []}
+          videos={tecnicaVideos[tecnica.id] || []}
+        />
 
         {/* Points */}
         <div className="mb-6">
@@ -135,7 +145,7 @@ export default function TecnicaDetalhe() {
           <div className="flex items-center gap-2 mb-3">
             <Layers size={16} className="text-teal-500" />
             <h2 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
-              Variantes
+              Variantes (clicar em cada uma para ler mais)
             </h2>
           </div>
           {tecnicaVariantes[tecnica.id] ? (
@@ -159,7 +169,7 @@ export default function TecnicaDetalhe() {
           <div className="flex items-center gap-2 mb-3">
             <Zap size={16} className="text-orange-500" />
             <h2 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
-              Ataques Aplicáveis
+              Ataques
             </h2>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -185,11 +195,6 @@ export default function TecnicaDetalhe() {
             })}
           </div>
         </div>
-
-        {/* Video carousel */}
-        {tecnicaVideos[tecnica.id] && (
-          <VideoCarrossel videos={tecnicaVideos[tecnica.id]} />
-        )}
 
         {/* Navigation between techniques */}
         <div className="flex gap-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">

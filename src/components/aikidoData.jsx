@@ -267,17 +267,17 @@ export const tecnicas = [
       "Ai Hanmi Katate Dori",
       "Kata Dori",
       "Katate Dori",
-      "Ushiro Katate Dori Kubi Shime",
-      "Morote Dori",
-      "Kata Dori Men Uchi",
+      // "Ushiro Katate Dori Kubi Shime",
+      // "Morote Dori",
+      // "Kata Dori Men Uchi",
       "Yokomen uchi",
       "Ushiro Ryote Dori",
-      "Ushiro Ryo Kata Dori",
-      "Muna Dori",
+      // "Ushiro Ryo Kata Dori",
+      // "Muna Dori",
       "Chudan Tsuki",
-      "Jodan Tsuki",
-      "Ushiro Eri Dori",
-      "Ushiro Eri Dori Men Uchi",
+      // "Jodan Tsuki",
+      // "Ushiro Eri Dori",
+      // "Ushiro Eri Dori Men Uchi",
     ],
     variantes: ["Omote (por fora)", "Ura (por dentro, girando)"],
   },
@@ -636,24 +636,24 @@ export const tecnicaVariantes = {
 
 export const kyuCores = {
   "5º Kyu": {
-    bg: "bg-white border border-zinc-300 dark:bg-zinc-100",
-    text: "text-zinc-700",
-  },
-  "4º Kyu": {
     bg: "bg-yellow-100 dark:bg-yellow-300",
     text: "text-yellow-800",
   },
-  "3º Kyu": {
+  "4º Kyu": {
     bg: "bg-orange-200 dark:bg-orange-300",
-    text: "text-orange-900",
+    text: "text-yellow-800",
   },
-  "2º Kyu": {
+  "3º Kyu": {
     bg: "bg-green-200 dark:bg-green-300",
     text: "text-green-900",
   },
-  "1º Kyu": {
+  "2º Kyu": {
     bg: "bg-blue-200 dark:bg-blue-300",
     text: "text-blue-900",
+  },
+  "1º Kyu": {
+    bg: "bg-brown-200 dark:bg-brown-300",
+    text: "text-brown-900",
   },
   Dan: {
     bg: "bg-zinc-800 dark:bg-zinc-900",
@@ -665,8 +665,12 @@ export const kyuCores = {
 export const tecnicaAtaqueKyu = {
   ikkyo: {
     "Shomen uchi": "5º Kyu",
-    "Yokomen uchi": "4º Kyu",
-    "Katate dori": "3º Kyu",
+    "Ai Hanmi Katate Dori": "5º Kyu",
+    "Katate Dori": "4º Kyu",
+    "Kata Dori": "4º Kyu",
+    "Yokomen uchi": "3º Kyu",
+    "Ushiro Ryote Dori": "3º Kyu",
+    "Chudan Tsuki": "2º Kyu",
   },
 };
 
