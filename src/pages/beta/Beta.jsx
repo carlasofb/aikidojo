@@ -126,13 +126,13 @@ const socialLinks = [
     id: "instagram",
     label: "Instagram",
     icon: Instagram,
-    url: "https://www.instagram.com/aikido_clube",
+    url: "https://www.instagram.com/aikido_portugal",
   },
   {
     id: "youtube",
     label: "YouTube",
     icon: Youtube,
-    url: "https://www.youtube.com/aikidoclube",
+    url: "https://www.youtube.com/YUDANSHA15",
   },
   {
     id: "mail",
